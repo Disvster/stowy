@@ -8,4 +8,6 @@ and set up NEOVIM!!! (gl to me).
 also check starship, check how hard it is and if its worth it cause 
 tbh terminal is looking good rn.
 
+edit: also need to theme hyprlock, XFCE apps and wofi.
+
 think thats it. s/o catppuccin-latte.
