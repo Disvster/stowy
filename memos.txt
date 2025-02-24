@@ -1,0 +1,11 @@
+
+			- 24/02/25 -
+my hyprland is starting to look good.
+
+things to add b4 I stop ricing is styling waybar, set up spotify
+and set up NEOVIM!!! (gl to me).
+
+also check starship, check how hard it is and if its worth it cause 
+tbh terminal is looking good rn.
+
+think thats it. s/o catppuccin-latte.
