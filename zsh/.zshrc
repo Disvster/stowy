@@ -1,3 +1,5 @@
+alias clock='tty-clock'
+
 # Use powerline
 USE_POWERLINE="true"
 # Has weird character width
