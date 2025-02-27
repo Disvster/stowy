@@ -26,6 +26,7 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    --{ "nvim-icons" },
     { import = "plugins" },
   },
   -- Configure any other settings here. See the documentation for more details.

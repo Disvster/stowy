@@ -15,3 +15,5 @@ vim.cmd.colorscheme "catppuccin-macchiato"
     vim.api.nvim_set_hl(0, 'LineNr', { fg='#ffe5b4', bold=true })
     vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='gray', bold=false })
 
+-- Icons
+--use 'yamatsum/nvim-nonicons'
