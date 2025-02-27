@@ -26,7 +26,7 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    -- { import = "plugins" },
+    { import = "plugins" },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
