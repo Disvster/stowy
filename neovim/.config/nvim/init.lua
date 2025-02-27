@@ -908,11 +908,12 @@ require("lazy").setup({
 		config = function()
 			---@diagnostic disable-next-line: missing-fields
 			require("tokyonight").setup({
-				---transparent = true,
+				transparent = true,
 				styles = {
 					comments = { italic = false }, -- Disable italics in comments
 				},
 			})
+			vim.cmd.colorscheme("tokyonight-moon")
 		end,
 	},
 	{
@@ -971,7 +972,7 @@ require("lazy").setup({
 			-- Load the colorscheme here.
 			-- Like many other themes, this one has different styles, and you could load
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("catppuccin-macchiato")
+			-- vim.cmd.colorscheme("catppuccin-macchiato")
 		end,
 	},
 
