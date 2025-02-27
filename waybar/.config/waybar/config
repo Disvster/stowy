@@ -7,7 +7,7 @@
     "spacing": 4, // Gaps between modules (4px)
     
     // Load Modules
-    "include": ["~/.config/waybar/modules.json"]
+    //"include": ["~/.config/waybar/modules.json"]
 
     // Choose the order of the modules
     "modules-left": [
