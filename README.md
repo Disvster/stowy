@@ -30,9 +30,13 @@ Use wtv package manager you usually use or clone the [official repo](https://git
 
 * Create a git repo, clone it, and `cd` into it. Mine is in `~/stowy/` (call it wtv u want).
 * Create directories with the names of the packages you want to stow and their specific paths to their config files. I'll use neovim again as an example:
-`mkdir -p neovim/.config/nvim`
+```
+mkdir -p neovim/.config/nvim
+```
 * Move the original config files (if there are any) to the new directory you created:
-`mv ~/.config/nvim/* ~/stowy/neovim/.config/nvim/.`
+```
+mv ~/.config/nvim/* ~/stowy/neovim/.config/nvim/.
+```
 * use `stow neovim` so that the directory `~/stowy/neovim/.config/nvim` now has a symlink to it under `~/.config/`
 
 You can do this to any type of file in any directory, just make sure you give the correct path to the file you want to create a symlink for, under the directory with the package's name.
