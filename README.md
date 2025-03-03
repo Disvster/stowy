@@ -19,7 +19,7 @@ In this example, whenever I edit/add/remove any file under `~/stowy/neovim/.conf
 
 Having a repo like this and the `stow` command makes it super easy to sync all your config files if you use different enviroments simultaneously (like home pc and school/work pc), or if you're distro hopping and want to quickly set-up the configs for your packages.
 
-Refer to [this website](https://www.gnu.org/software/stow/) if you have doubts.
+Refer to the [offical GNU stow website](https://www.gnu.org/software/stow/) if you have doubts.
 
 ### Install
 
