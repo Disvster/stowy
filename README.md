@@ -1,6 +1,6 @@
 # stowy - directory to save and `stow` my dotfiles
 
-Inside this repo is where I add, edit and `stow` the config files for the packages that I use in my worspace.
+Inside this repo is where I add, edit and `stow` the config files for the packages that I use in my workspace.
 
 ## Using the GNU's Stow command
 
@@ -15,6 +15,8 @@ $>ls -la ~/.config | grep nvim
 lrwxrwxrwx  [...] nvim -> ../stowy/neovim/.config/nvim
 ```
 In this example, whenever I edit/add/remove any file under `~/stowy/neovim/.config/nvim` (or it's symlink under `~/.config/nvim/`) the changes will always affect the symlink (or vice versa).
+
+Having a repo like this and the `stow` command makes it super easy to sync all your config files if you use different enviroments simultaneously (like home pc and school/work pc), or if you're distro hopping and want to quickly set-up the configs for your packages.
 
 Refer to ['this website'](https://www.gnu.org/software/stow/) if you have doubts.
 
