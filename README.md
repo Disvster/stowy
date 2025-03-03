@@ -1,6 +1,6 @@
 # stowy - directory to save and `stow` my dotfiles
 
-In this repo is where I add, edit and `stow` the config files for the packages that I use in my worspace.
+Inside this repo is where I add, edit and `stow` the config files for the packages that I use in my worspace.
 
 ## Using the GNU's Stow command
 
