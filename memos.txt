@@ -1,3 +1,9 @@
+			- 14/03/25 -
+to do:
+- waybar;
+- hypr idle & lock;
+- hyprpaper;
+- theme xfce apps and spotify.
 
 			- 24/02/25 -
 my hyprland is starting to look good.
