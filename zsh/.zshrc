@@ -1,4 +1,5 @@
 alias clock='tty-clock'
+alias ccw='cc -Wall -Wextra -Werror -g'
 
 # Use powerline
 USE_POWERLINE="true"
@@ -6,10 +7,12 @@ USE_POWERLINE="true"
 # Example:
 #    is not a diamond
 HAS_WIDECHARS="false"
+
 # Source manjaro-zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
 fi
+
 # Use manjaro zsh prompt
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
