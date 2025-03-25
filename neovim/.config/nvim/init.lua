@@ -184,7 +184,8 @@ require("lazy").setup({
 			},
 		},
 	},
-	{
+    -- TODO: LSP'S PRA BAIXO
+  {
 		-- Main LSP Configuration
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -196,10 +197,10 @@ require("lazy").setup({
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 			-- Useful status updates for LSP.
-			-- -- [[ { "j-hui/fidget.nvim", opts = {} }, ]]--   WARNING:
+      { "j-hui/fidget.nvim", opts = {} },
 
 			-- Allows extra capabilities provided by nvim-cmp
-			-- [[ "hrsh7th/cmp-nvim-lsp", ]]--               WARNING:
+			-- "hrsh7th/cmp-nvim-lsp",              WARNING:
 		},
 		config = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -432,6 +433,7 @@ require("lazy").setup({
 			})
 		end,
 	},
+  -- TODO: LSP'S PRA CIMA 
 
 	--[[{ -- Autoformat             WARNING:
 		"stevearc/conform.nvim",
