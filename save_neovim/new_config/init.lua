@@ -19,7 +19,8 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
-	{ import = "plugins" },
+	{ import = "plugins." },
+	{ import = "plugins." },
 	{ import = "LSP.plugins" })
 
 -- TODO:
@@ -32,3 +33,4 @@ require("lazy").setup(
 	{ "folke/trouble.nvim", enabled = false },
 }
 ]]--
+require("vim-options")
