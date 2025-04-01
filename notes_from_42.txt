@@ -1,0 +1,1 @@
+hyprland keybind hints - https://github.com/Gl00ria/hyprdots/blob/gl00ria_remix/Configs%2F.config%2Fhypr%2Fhyprland.conf#L5
