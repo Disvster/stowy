@@ -1,3 +1,4 @@
+#ln -s teste
 alias yusufas='~/.yusufas.out'
 
 # If you come from bash you might have to change your $PATH.
@@ -112,4 +113,7 @@ alias mini='~/mini-moulinette/mini-moul.sh'
 export MAIL='manmaria@student.42porto.com'
 alias kitty='/home/manmaria/.local/kitty.app/bin/kitty'
 #alias kitty--start-as=fullsreen='/home/manmaria/.local/kitty.app/bin/kitty --start-as=fullsreen'
-source /home/manmaria/stowy/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias brew='/home/manmaria/.local/bin/brew'
+alias stow='/home/manmaria/.local/bin/stow'
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/manmaria/stowy/42_zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
