@@ -19,18 +19,19 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
-	{ import = "plugins." },
-	{ import = "plugins." },
-	{ import = "LSP.plugins" })
+	{ import = "plugins.tokyonight" },
+--	{ import = "plugins.catppuccin" },
+	{ import = "plugins.vim-sleuth" },
+	{ import = "plugins.git-signs" },
+	{ import = "plugins.which-key" },
+	{ import = "plugins.telescope" },
+	{ import = "plugins.LSP.lazydev" },
+	{ import = "plugins.LSP.nvim-lspconfig" },
+--	{ import = "plugins.LSP.nvim-cmp_autocompletion" },
+--	{ import = "plugins.LSP.conform_autoformat" },
+	{ import = "plugins.todo-comments" },
+	{ import = "plugins.mini" },
+	{ import = "plugins.nvim-treesitter" },
+	{ import = "plugins.neo-tree" })
 
--- TODO:
--- declare with import all the plugins and comment out 
--- here the ones you dont want to use,
--- instead of doing this in individual plugin files, eg.:
---[[
---return {
-	-- disable trouble
-	{ "folke/trouble.nvim", enabled = false },
-}
-]]--
 require("vim-options")
