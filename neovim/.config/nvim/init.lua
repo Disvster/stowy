@@ -39,7 +39,9 @@ require("lazy").setup({
 --	{ import = "plugins.health" },
 	{ import = "plugins.switcheroo" },
 	{ import = "plugins.lush" },
-	{ import = "plugins.persistence" }
+	{ import = "plugins.persistence" },
+	{ import = "plugins.themery" },
+	{ import = "plugins.42_header" }
 }, {
 	ui = {
 	-- If you are using a Nerd Font: set icons to an empty table which will use the
