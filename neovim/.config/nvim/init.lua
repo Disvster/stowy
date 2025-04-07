@@ -33,11 +33,13 @@ require("lazy").setup({
 	{ import = "plugins.mini" },
 	{ import = "plugins.nvim-treesitter" },
 	{ import = "plugins.neo-tree" },
-	{ import = "plugins.alpha" },
+--	{ import = "plugins.alpha" },
+	{ import = "plugins.snacks_dashboard" },
 	{ import = "plugins.indent_line" },
 --	{ import = "plugins.health" },
 	{ import = "plugins.switcheroo" },
 	{ import = "plugins.lush" },
+	{ import = "plugins.persistence" }
 }, {
 	ui = {
 	-- If you are using a Nerd Font: set icons to an empty table which will use the
