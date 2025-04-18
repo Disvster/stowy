@@ -115,12 +115,10 @@ alias kitty='/home/manmaria/.local/kitty.app/bin/kitty'
 #alias kitty--start-as=fullsreen='/home/manmaria/.local/kitty.app/bin/kitty --start-as=fullsreen'
 alias brew='/home/manmaria/.local/bin/brew'
 alias stow='/home/manmaria/.local/bin/stow'
+alias nvim='/home/manmaria/.local/bin/nvim'
+alias bat='/home/manmaria/.local/bin/bat'
+alias paco='/home/manmaria/francinette/tester.sh'
+alias getc="find -type f -name '*.c' -not -path '*/.*' -exec basename {} \; | tr '\n' ' '"
+
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/manmaria/stowy/42_zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-PATH="/home/manmaria/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/manmaria/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/manmaria/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/manmaria/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/manmaria/perl5"; export PERL_MM_OPT;
-export PERL5LIB="$(brew --prefix)/lib/perl5/site_perl:$PERL5LIB"
