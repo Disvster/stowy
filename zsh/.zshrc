@@ -1,5 +1,6 @@
 alias clock='tty-clock'
 alias ccw='cc -Wall -Wextra -Werror -g'
+alias norm='norminette -R CheckForbiddenSourceHeader'
 
 # Use powerline
 USE_POWERLINE="true"
