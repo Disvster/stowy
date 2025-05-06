@@ -41,7 +41,8 @@ require("lazy").setup({
 	{ import = "plugins.lush" },
 	{ import = "plugins.persistence" },
 	{ import = "plugins.themery" },
-	{ import = "plugins.42_header" }
+	{ import = "plugins.42_header" },
+	{ import = "plugins.42_norminette" }
 }, {
 	ui = {
 	-- If you are using a Nerd Font: set icons to an empty table which will use the
