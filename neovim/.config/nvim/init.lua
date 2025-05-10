@@ -42,7 +42,7 @@ require("lazy").setup({
 	{ import = "plugins.persistence" },
 	{ import = "plugins.themery" },
 	{ import = "plugins.42_header" },
-	{ import = "plugins.copilotChat" },
+--	{ import = "plugins.copilotChat" },
 	{ import = "plugins.42_norminette" }
 }, {
 	ui = {
