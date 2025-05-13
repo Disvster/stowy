@@ -1,3 +1,4 @@
+export EDITOR=vim
 #ln -s teste
 alias yusufas='~/.yusufas.out'
 
