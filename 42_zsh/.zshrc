@@ -1,17 +1,21 @@
+HPREFIX="${HOME}/sgoinfre/hbrew"
+export HOMEBREW_PREFIX="$HPREFIX"
+export HOMEBREW_CELLAR="$HPREFIX/Cellar"
+export HOMEBREW_CACHE="$HPREFIX/Cache"
+export HOMEBREW_TEMP="$HPREFIX/Temp"
+export HOMEBREW_REPOSITORY="$HPREFIX/Homebrew"
+export HOMEBREW_CASK_OPTS='${HOME}/Applications'
+export PATH="$HPREFIX/bin:$HPREFIX/sbin${PATH+:$PATH}"
+export MANPATH="$HPREFIX/share/man${MANPATH+:$MANPATH}:"
+export INFOPATH="$HPREFIX/share/info:${INFOPATH:-}"
+# export HOMEBREW_NO_ANALYTICS=1
+# export HOMEBREW_NO_ENV_HINTS=1
+
 export EDITOR=vim
-#ln -s teste
 alias yusufas='~/.yusufas.out'
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
-# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="theunraveler"
 
 # Set list of themes to pick from when loading at random
@@ -110,14 +114,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias mini='~/mini-moulinette/mini-moul.sh'
 export MAIL='manmaria@student.42porto.com'
 alias kitty='/home/manmaria/.local/kitty.app/bin/kitty'
-#alias kitty--start-as=fullsreen='/home/manmaria/.local/kitty.app/bin/kitty --start-as=fullsreen'
-alias brew='/home/manmaria/.local/bin/brew'
-alias stow='/home/manmaria/.local/bin/stow'
-alias nvim='/home/manmaria/.local/bin/nvim'
-alias bat='/home/manmaria/.local/bin/bat'
+
 alias paco='/home/manmaria/francinette/tester.sh'
 alias getc="find -type f -name '*.c' -not -path '*/.*' -exec basename {} \; | tr '\n' ' '"
 

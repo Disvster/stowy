@@ -44,6 +44,7 @@ require("lazy").setup({
 	{ import = "plugins.42_header" },
 	{ import = "plugins.AI.copilot" },
 	{ import = "plugins.AI.copilotChat" },
+	{ import = "plugins.golf" },
 	{ import = "plugins.42_norminette" }
 }, {
 	ui = {
