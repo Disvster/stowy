@@ -4,7 +4,6 @@ vim.g.maplocalleader = " "
 
 -- true if Nerd Font Installed
 vim.g.have_nerd_font = true
--- require("vim-options")
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 
