@@ -77,19 +77,6 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- [[ Plugin Keymaps ]]
-
--- CopilotChat
-
--- Keybind to open Copilot chat window
-vim.api.nvim_set_keymap('n', '<leader>cp', ':CopilotChatOpen<CR>', { noremap = true, silent = true })
-
--- LSP
--- Keybind to enable virtual text for diagnostics
-vim.api.nvim_set_keymap('n', '<leader>lt', ':lua vim.diagnostic.config({virtual_text=true})<CR>', { noremap = true, silent = true })
-
--- Keybind to disable virtual text for diagnostics
-vim.api.nvim_set_keymap('n', '<leader>lf', ':lua vim.diagnostic.config({virtual_text=false})<CR>', { noremap = true, silent = true })
 -- [[ Basic Keymaps ]]
 
 -- Clear highlights on search when pressing <Esc> in normal mode
@@ -129,3 +116,20 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- [[ Plugin Keymaps ]]
+
+-- [CopilotChat]
+-- Keybind to open Copilot chat window
+vim.api.nvim_set_keymap('n', '<leader>cp', ':CopilotChatOpen<CR>', { noremap = true, silent = true, desc = "toggle [C]o[P]ilot Chat Window"})
+
+-- [LSP]
+-- Keybind to enable virtual text for diagnostics
+vim.api.nvim_set_keymap('n', '<leader>lt', ':lua vim.diagnostic.config({virtual_text=true})<CR>', { noremap = true, silent = true, desc = "[L]anguageServer inline text [T]rue" })
+
+-- Keybind to disable virtual text for diagnostics
+vim.api.nvim_set_keymap('n', '<leader>lf', ':lua vim.diagnostic.config({virtual_text=false})<CR>', { noremap = true, silent = true, desc = "[L]anguageServer inline text [F]alse" })
+
+-- [Markview]
+-- enable/disable Markdown Preview
+vim.api.nvim_set_keymap('n', '<leader>mp', ':Markview Toggle<CR>', { noremap = true, silent = true, desc = "Toggle [M]arkdown [P]review" })

@@ -48,7 +48,9 @@ require("lazy").setup({
 	{ import = "plugins.persistence" },
 	{ import = "plugins.42_header" },
 	{ import = "plugins.golf" },
-	{ import = "plugins.42_norminette" }
+	{ import = "plugins.42_norminette" },
+	{ import = "plugins.markdown.markview" },
+	{ import = "plugins.markdown.bullets" }
 }, {
 	ui = {
 	-- If you are using a Nerd Font: set icons to an empty table which will use the
