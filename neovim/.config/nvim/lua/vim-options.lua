@@ -17,12 +17,6 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Norme correct tab
---vim.opt.tabstop = 2
---vim.opt.shiftwidth = 2
---vim.opt.expandtab = true
---vim.opt.tabstop = 8
---vim.opt.shiftwidth = 8
---vim.opt.expandtab = false
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -102,6 +96,12 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+-- toggle built-in neovim Spell Checking
+-- https://neovim.io/doc/user/spell.html#_double-scoring
+vim.keymap.set('n', '<leader>sc', function()
+  vim.cmd('setlocal spell!')
+end, { desc = 'Toggle [S]pell [C]hecking' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
