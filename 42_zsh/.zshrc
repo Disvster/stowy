@@ -82,6 +82,7 @@ plugins=(git)
 
 export MAIL='manmaria@student.42porto.com'
 alias ccw='cc -Wall -Werror -Wextra -g'
+alias findc="find -type f -name '*.c' -not -path '*/.*' -exec basename {} \; | tr '\n' ' '"
 alias norm='norminette -R CheckForbiddenSourceHeader'
 alias tmux='TERM=screen-256color-bce tmux'
 source $ZSH/oh-my-zsh.sh
