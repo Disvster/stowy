@@ -3,7 +3,7 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     require('spectre').setup({
-      result_padding = 'ola',
+      result_padding = ' ',
       default = {
         replace = { cmd = 'sed' }
       }
