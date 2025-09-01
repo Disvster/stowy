@@ -1,10 +1,12 @@
-HPREFIX="${HOME}/sgoinfre/hbrew"
+HPREFIX="/sgoinfre/manmaria/homebrew"
+export HOMEBREW_CURL_TIMEOUT=5
 export HOMEBREW_PREFIX="$HPREFIX"
 export HOMEBREW_CELLAR="$HPREFIX/Cellar"
 export HOMEBREW_CACHE="$HPREFIX/Cache"
 export HOMEBREW_TEMP="$HPREFIX/Temp"
+export HOMEBREW_LOGS="$HPREFIX/Logs"
 export HOMEBREW_REPOSITORY="$HPREFIX/Homebrew"
-export HOMEBREW_CASK_OPTS='${HOME}/Applications'
+export HOMEBREW_CASK_OPTS="${HOME}/Applications"
 export PATH="$HPREFIX/bin:$HPREFIX/sbin:/home/manmaria/.local/bin${PATH+:$PATH}"
 export MANPATH="$HPREFIX/share/man${MANPATH+:$MANPATH}:"
 export INFOPATH="$HPREFIX/share/info:${INFOPATH:-}"
@@ -122,6 +124,7 @@ alias kitty='/home/manmaria/.local/kitty.app/bin/kitty'
 
 alias paco='/home/manmaria/francinette/tester.sh'
 alias getc="find -type f -name '*.c' -not -path '*/.*' -exec basename {} \; | tr '\n' ' '"
+alias installbrew="$HOME/installbrew.sh"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/manmaria/stowy/42_zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
