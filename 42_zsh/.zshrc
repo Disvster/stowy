@@ -125,6 +125,7 @@ alias kitty='/home/manmaria/.local/kitty.app/bin/kitty'
 alias paco='/home/manmaria/francinette/tester.sh'
 alias getc="find -type f -name '*.c' -not -path '*/.*' -exec basename {} \; | tr '\n' ' '"
 alias installbrew="$HOME/installbrew.sh"
+alias grep-ps='grep -e "pb" -e "pa" -e "rra" -e "ra" -e "rb" -e "rrb" -e "rr" -e "rrr" -e "sa" -e "sb" -e "ss"'
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/manmaria/stowy/42_zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
