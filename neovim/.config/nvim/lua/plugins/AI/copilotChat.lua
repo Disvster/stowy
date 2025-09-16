@@ -9,9 +9,24 @@ return {
     setup = "telescope-ui-select.nvim",
     opts = {
       keymaps = {
-        reset_chat = "<C-'>", -- Change this to your preferred keybinding
+        reset_chat = "<C-p'>", -- Change this to your preferred keybinding
       },     -- See Configuration section for options
     },
+  window = {
+    layout = 'vertical',
+    width = 0.35, -- Fixed width in columns
+    border = 'rounded', -- 'single', 'double', 'rounded', 'solid'
+    title = '🤖 Copilot',
+  },
+
+  headers = {
+    user = '👤 You',
+    assistant = '🤖 Copilot',
+    tool = '🔧 Tool',
+  },
+
+  separator = '━━',
+  auto_fold = false, -- Automatically folds non-assistant messages
     -- See Commands section for default commands if you want to lazy load on them
   },
 }
