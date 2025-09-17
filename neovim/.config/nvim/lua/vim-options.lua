@@ -122,6 +122,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- [CopilotChat]
 -- Keybind to open Copilot chat window
 vim.api.nvim_set_keymap('n', '<leader>cp', ':CopilotChatOpen<CR>', { noremap = true, silent = true, desc = "toggle [C]o[P]ilot Chat Window"})
+vim.g.copilot_no_tab_map = true
+vim.keymap.set('i', '<S-Tab>', 'copilot#Accept("\\<S-Tab>")', { expr = true, replace_keycodes = false })
 
 -- [LSP]
 -- Keybind to enable virtual text for diagnostics
