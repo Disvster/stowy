@@ -26,8 +26,8 @@
         "memory",
         "temperature",
         "backlight",
-        "keyboard-state",
-        "sway/language",
+        "hyprland/keyboard-state",
+        //"sway/language",
         "battery",
         "battery#bat2",
         "clock",
@@ -51,10 +51,10 @@
              "default": ""
          }
      },
-    "keyboard-state": {
+    "hyprland/keyboard-state": {
         "numlock": true,
         "capslock": true,
-        "format": "{name} {icon}",
+        "format": "{layout} {icon}",
         "format-icons": {
             "locked": "",
             "unlocked": ""
