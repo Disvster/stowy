@@ -102,6 +102,27 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set('n', '<leader>sc', function()
   vim.cmd('setlocal spell!')
 end, { desc = 'Toggle [S]pell [C]hecking' })
+--
+-- Toggle between English and Portuguese spell dictionaries
+vim.keymap.set('n', '<leader>pt', function()
+  if vim.o.spelllang == 'en' then
+    vim.opt.spelllang = 'pt'
+    print("Spelllang set to Portuguese")
+  else
+    vim.opt.spelllang = 'en'
+    print("Spelllang set to English")
+  end
+end, { desc = 'Toggle Dictionary (en/[pt])' })
+
+vim.keymap.set('n', '<leader>en', function()
+  if vim.o.spelllang == 'en' then
+    vim.opt.spelllang = 'pt'
+    print("Spelllang set to Portuguese")
+  else
+    vim.opt.spelllang = 'en'
+    print("Spelllang set to English")
+  end
+end, { desc = 'Switch Dictionary ([en]/pt)' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
