@@ -33,6 +33,8 @@ require("lazy").setup({
 --	{ import = "plugins.LSP.nvim-cmp_autocompletion" },
 --	{ import = "plugins.LSP.conform_autoformat" },
 
+	{ import = "plugins.supercollider.scnvim" },
+	{ import = "plugins.supercollider.scpiano" },
 	-- { import = "plugins.vim-sleuth" },
 	{ import = "plugins.gitsigns" },
 	{ import = "plugins.which-key" },
