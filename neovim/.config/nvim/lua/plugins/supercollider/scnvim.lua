@@ -6,8 +6,21 @@ return {
     local map = scnvim.map
     local map_expr = scnvim.map_expr
     scnvim.setup {
-      -- your config here
+      keymaps = {
+        ['<localleader>sc'] = {
+          map('editor.send_line', '<CR>'),
+          map('editor.send_block', '<M-CR>'),
+          map('editor.send_selection', '<CR>'),
+        },
+        ['<localleader>scb'] = map('sclang.boot', 'sc'),
+        ['<localleader>scr'] = map('sclang.recompile', 'sc'),
+        ['<localleader>sck'] = map('sclang.start', 'sc'),
+        ['<localleader>sct'] = map('sclang.stop', 'sc'),
+        ['<localleader>scq'] = map('postwin.toggle', 'sc'),
+        ['<localleader>scp'] = map('postwin.clear', 'sc'),
+        ['<localleader>sc.'] = map('sclang.hard_stop', 'sc'),
+      }
     }
-	require('scnvim.extensions.piano').setup()
+    require('scnvim.extensions.piano').setup()
   end
 }
