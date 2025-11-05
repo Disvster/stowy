@@ -99,9 +99,9 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 -- toggle built-in neovim Spell Checking
 -- https://neovim.io/doc/user/spell.html#_double-scoring
-vim.keymap.set('n', '<leader>sc', function()
+vim.keymap.set('n', '<leader>cs', function()
   vim.cmd('setlocal spell!')
-end, { desc = 'Toggle [S]pell [C]hecking' })
+end, { desc = 'Toggle [C]heck [S]pelling' })
 --
 -- Toggle between English and Portuguese spell dictionaries
 vim.keymap.set('n', '<leader>pt', function()
