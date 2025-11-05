@@ -24,3 +24,13 @@ return {
     require('scnvim.extensions.piano').setup()
   end
 }
+-- The keybindings now are:
+--
+--     <space>sc + Enter - Send line/block/selection
+--     <space>scb - Boot SuperCollider server
+--     <space>scr - Recompile class library
+--     <space>sck - Start sclang (think "k" for "kick start")
+--     <space>sct - Stop sclang
+--     <space>scq - Toggle post window (think "q" for query)
+--     <space>scp - Clear post window
+--     <space>sc. - Hard stop (emergency stop all sound)
