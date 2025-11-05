@@ -12,16 +12,22 @@ return {
           map('editor.send_block', '<M-CR>'),
           map('editor.send_selection', '<CR>'),
         },
-        ['<localleader>scb'] = map('sclang.boot', 'sc'),
-        ['<localleader>scr'] = map('sclang.recompile', 'sc'),
-        ['<localleader>sck'] = map('sclang.start', 'sc'),
-        ['<localleader>sct'] = map('sclang.stop', 'sc'),
-        ['<localleader>scq'] = map('postwin.toggle', 'sc'),
-        ['<localleader>scp'] = map('postwin.clear', 'sc'),
-        ['<localleader>sc.'] = map('sclang.hard_stop', 'sc'),
-      }
-    }
-    require('scnvim.extensions.piano').setup()
+		['<localleader>scb'] = map('sclang.boot'),
+		['<localleader>scr'] = map('sclang.recompile'),
+		['<localleader>sck'] = map('sclang.start'),
+		['<localleader>sct'] = map('sclang.stop'),
+		['<localleader>scq'] = map('postwin.toggle'),
+		['<localleader>scp'] = map('postwin.clear'),
+		['<localleader>sc.'] = map('sclang.hard_stop'),
+      },
+	  extensions = {
+		piano = {
+		default_synth = 'default',  -- or your custom synth name
+		note_dur = 0.5              -- default note duration in seconds
+		}
+	  }
+	}
+    scnvim.load_extension('piano')
   end
 }
 -- The keybindings now are:
