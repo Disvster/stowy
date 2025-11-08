@@ -118,6 +118,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
 alias mini='~/mini-moulinette/mini-moul.sh'
 export MAIL='manmaria@student.42porto.com'
 alias kitty='/home/manmaria/.local/kitty.app/bin/kitty'
