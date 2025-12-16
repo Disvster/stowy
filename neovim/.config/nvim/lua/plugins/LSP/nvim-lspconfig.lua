@@ -35,7 +35,7 @@ return{
 				map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition") -- WARNING:
 
 				-- Find references for the word under your cursor.
-				-- map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences") --  WARNING:
+				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences") --  WARNING:
 
 				-- Jump to the implementation of the word under your cursor.
 				--  Useful when your language has ways of declaring types without an actual implementation.
@@ -185,6 +185,7 @@ return{
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
 			clangd = {},
+			pylsp = {},
 			-- gopls = {},
 			-- pyright = {},
 			-- rust_analyzer = {},
@@ -205,7 +206,7 @@ return{
 							callSnippet = "Replace",
 						},
 						-- You can toggle below to ignore Lua_LS's noisy `missing-fields`  WARNING:s
-						diagnostics = { disable = { 'missing-fields' } },
+					diagnostics = { disable = { 'missing-fields' } },
 					},
 				},
 			},
