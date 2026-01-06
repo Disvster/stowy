@@ -127,6 +127,11 @@ alias paco='/home/manmaria/francinette/tester.sh'
 alias getc="find -type f -name '*.c' -not -path '*/.*' -exec basename {} \; | tr '\n' ' '"
 alias installbrew="$HOME/installbrew.sh"
 alias grep-ps='grep -e "pb" -e "pa" -e "rra" -e "ra" -e "rb" -e "rrb" -e "rr" -e "rrr" -e "sa" -e "sb" -e "ss"'
+alias gdbtuia='gdbtui --args'
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/manmaria/stowy/42_zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
