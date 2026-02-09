@@ -15,13 +15,31 @@ return {
   },
   opts = {
     filesystem = {
+	  filterd_items = {
+		  visible = false,
+		  hide_dotfiles = false,
+		  hide_gitignored = false,
+		  hide_by_name = {},
+		  never_show = {},
+	  },
       window = {
         position = "left",
         width = 33,
         mappings = {
           ['\\'] = 'close_window',
+		  ['f'] = function(state)
+            -- Call the default filter_on_submit
+            local commands = require("neo-tree.sources.filesystem.commands")
+            commands.filter_on_submit(state)
+            -- Force a refresh after a short delay
+            vim.defer_fn(function()
+              commands.refresh(state)
+            end, 1)
+          end,
+          ['<C-x>'] = 'clear_filter',
         },
       },
     },
   },
+  lazy = false,
 }

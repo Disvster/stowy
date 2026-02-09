@@ -5,10 +5,10 @@ return { -- Highlight todo, notes, etc in comments
 	opts = { signs = false },
 
 --  PERF: fully optimised
---  HACK: this looks a bit funky
+--  HACK: this looks a bit funky OR debbuging
 --  TODO: reminder to add something
 --  NOTE: adding a note
 --  FIX:  this needs fixing
---  WARNING: CARE THIS, idk 
+--  WARNING: CARE THIS or this might not work
 
 }

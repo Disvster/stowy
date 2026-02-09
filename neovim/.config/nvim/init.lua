@@ -53,6 +53,7 @@ require("lazy").setup({
 	{ import = "plugins.42_norminette" },
 	{ import = "plugins.markdown.markview" },
 	{ import = "plugins.markdown.bullets" },
+	{ import = "plugins.debug"},
 	{ import = "plugins.spectre"}
 }, {
 	ui = {
