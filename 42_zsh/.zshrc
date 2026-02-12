@@ -18,7 +18,8 @@ alias yusufas='~/.yusufas.out'
 
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="theunraveler"
+ZSH_THEME="muse"
+# ZSH_THEME="theunraveler"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
