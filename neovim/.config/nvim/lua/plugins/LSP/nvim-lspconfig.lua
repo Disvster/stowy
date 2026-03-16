@@ -13,7 +13,7 @@ return{
       {"j-hui/fidget.nvim", opts = {} },
 
 		-- Allows extra capabilities provided by nvim-cmp
-		-- "hrsh7th/cmp-nvim-lsp",              WARNING:
+		"hrsh7th/cmp-nvim-lsp",--WARNING:
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -39,24 +39,24 @@ return{
 
 				-- Jump to the implementation of the word under your cursor.
 				--  Useful when your language has ways of declaring types without an actual implementation.
-				-- map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation") -- WARNING:
+				map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation") -- WARNING:
 
 				-- Jump to the type of the word under your cursor.
 				--  Useful when you're not sure what type a variable is and you want to see
 				--  the definition of its *type*, not where it was *defined*.
-				-- map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition") -- WARNING:
+				map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition") -- WARNING:
 
 				-- Fuzzy find all the symbols in your current document.
 				--  Symbols are things like variables, functions, types, etc.
-				-- map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols") --  WARNING:
+				map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols") --  WARNING:
 
 				-- Fuzzy find all the symbols in your current workspace.
 				--  Similar to document symbols, except searches over your entire project.
-				--[[map(             --  WARNING:
+				map(             --  WARNING:
 					"<leader>ws",
 					require("telescope.builtin").lsp_dynamic_workspace_symbols,
 					"[W]orkspace [S]ymbols"
-				)]]--
+				)
 
 				-- Rename the variable under your cursor.
 				--  Most Language Servers support renaming across files, etc.
@@ -68,7 +68,7 @@ return{
 
 				-- WARN: This is not Goto Definition, this is Goto Declaration.
 				--  For example, in C this would take you to the header.
-				-- map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")   WARNING:
+				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration") -- WARNING:
 
 				-- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
 				---@param client vim.lsp.Client
@@ -88,7 +88,7 @@ return{
 				--    See `:help CursorHold` for information about when this is executed
 				--
 				-- When you move your cursor, the highlights will be cleared (the second autocommand).
-				--[[local client = vim.lsp.get_client_by_id(event.data.client_id)   WARNING:
+				local client = vim.lsp.get_client_by_id(event.data.client_id)   --WARNING:
 				if
 					client
 					and client_supports_method(
@@ -118,7 +118,7 @@ return{
 							vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
 						end,
 					})
-				end]]
+				end
 				--  WARNING:
 
 				-- The following code creates a keymap to toggle inlay hints in your
