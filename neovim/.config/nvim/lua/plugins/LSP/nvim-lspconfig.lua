@@ -13,7 +13,7 @@ return{
       {"j-hui/fidget.nvim", opts = {} },
 
 		-- Allows extra capabilities provided by nvim-cmp
-		"hrsh7th/cmp-nvim-lsp",--WARNING:
+		-- "hrsh7th/cmp-nvim-lsp",--WARNING:
 	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -125,14 +125,14 @@ return{
 				-- code, if the language server you are using supports them
 				--
 				-- This may be unwanted, since they displace some of your code
-				--[[if
+				if
 					client
 					and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf)
 				then
 					map("<leader>th", function()
 						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
 					end, "[T]oggle Inlay [H]ints")
-				end]]
+				end
 				--  WARNING:
 			end,
 		})
@@ -171,7 +171,7 @@ return{
 		--  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
 		--  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+		-- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 		-- WARNING: commented line above because I dont want autocompletion
 
 		-- Enable the following language servers

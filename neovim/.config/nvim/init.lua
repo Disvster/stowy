@@ -29,8 +29,9 @@ require("lazy").setup({
 	{ import = "plugins.AI.copilotChat" },
 
 	{ import = "plugins.LSP.lazydev" },
+
 	{ import = "plugins.LSP.nvim-lspconfig" },
-	{ import = "plugins.LSP.nvim-cmp_autocompletion" },
+	-- { import = "plugins.LSP.nvim-cmp_autocompletion" },
 --	{ import = "plugins.LSP.conform_autoformat" },
 
 	{ import = "plugins.supercollider.scnvim" },
