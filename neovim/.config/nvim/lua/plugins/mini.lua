@@ -28,8 +28,33 @@ return{ -- Collection of various small independent plugins/modules
 		-- cursor location to LINE:COLUMN
 		---@diagnostic disable-next-line: duplicate-set-field
 		statusline.section_location = function()
-			return "%2l:%-2v"
+			local battery = ""
+			local battery_file = "/sys/class/power_supply/BAT0/capacity"
+			local file = io.open(battery_file, "r")
+			if file then
+				battery = file:read("*a"):gsub("\n", "")
+				io.close(file)
+				battery = battery .. "%%"
+			end
+			return "%2l:%-2v|" .. os.date(" ⏱ %H:%M |🔋") .. battery
 		end
+
+		-- Add time and date to the statusline
+		-- statusline.section_time = function()
+		-- 	return os.date("%Y-%m-%d %H:%M")
+		-- end
+		--
+		-- statusline.content = function(config)
+		--   return table.concat({
+		-- 	statusline.section_time(),
+		-- 	statusline.section_mode(config),
+		-- 	statusline.section_git(config),
+		-- 	statusline.section_diagnostics(config),
+		-- 	statusline.section_filename(config),
+		-- 	statusline.section_fileinfo(config),
+		-- 	statusline.section_location(config),
+		--   }, " ")
+		-- end
 
 		require('mini.comment').setup()
 
