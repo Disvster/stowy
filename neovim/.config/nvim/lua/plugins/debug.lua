@@ -125,9 +125,13 @@ return {
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- C/C++ config via codelldb
-    local codelldb_executable = vim.fn.stdpath 'data' .. '/mason/bin/codelldb'
-    if vim.fn.has 'win32' == 1 then
-      codelldb_executable = codelldb_executable .. '.exe'
+    local is_win = vim.fn.has 'win32' == 1
+    local codelldb_executable = vim.fn.exepath 'codelldb'
+    if codelldb_executable == '' then
+      codelldb_executable = vim.fn.stdpath 'data' .. '/mason/bin/codelldb'
+      if is_win then
+        codelldb_executable = codelldb_executable .. '.exe'
+      end
     end
 
     local has_codelldb_pkg, codelldb_pkg = pcall(function()
@@ -136,7 +140,7 @@ return {
     if has_codelldb_pkg and codelldb_pkg:is_installed() then
       local codelldb_install_path = codelldb_pkg:get_install_path()
       codelldb_executable = codelldb_install_path .. '/extension/adapter/codelldb'
-      if vim.fn.has 'win32' == 1 then
+      if is_win then
         codelldb_executable = codelldb_executable .. '.exe'
       end
     end
