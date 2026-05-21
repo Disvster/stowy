@@ -128,10 +128,10 @@ return {
     local is_win = vim.fn.has 'win32' == 1
     local codelldb_executable
 
-    local get_pkg_success, codelldb_pkg = pcall(function()
+    local ok, codelldb_pkg = pcall(function()
       return mason_registry.get_package 'codelldb'
     end)
-    if get_pkg_success and codelldb_pkg:is_installed() then
+    if ok and codelldb_pkg:is_installed() then
       local codelldb_install_path = codelldb_pkg:get_install_path()
       codelldb_executable = codelldb_install_path .. '/extension/adapter/codelldb'
       if is_win then
@@ -139,16 +139,10 @@ return {
       end
     else
       codelldb_executable = vim.fn.exepath 'codelldb'
-      if codelldb_executable == '' then
-        codelldb_executable = vim.fn.stdpath 'data' .. '/mason/bin/codelldb'
-        if is_win then
-          codelldb_executable = codelldb_executable .. '.exe'
-        end
-      end
     end
     if vim.fn.executable(codelldb_executable) == 0 then
       vim.notify(
-        'codelldb executable not found. Install it via :Mason (codelldb) or ensure it is in your PATH.',
+        'codelldb executable not found yet. It may still be installing via :Mason; otherwise ensure codelldb is in PATH.',
         vim.log.levels.WARN
       )
     end
