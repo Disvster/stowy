@@ -140,35 +140,36 @@ return {
     else
       codelldb_executable = vim.fn.exepath 'codelldb'
     end
-    if vim.fn.executable(codelldb_executable) == 0 then
+    local has_codelldb = type(codelldb_executable) == 'string' and codelldb_executable ~= '' and vim.fn.executable(codelldb_executable) == 1
+    if not has_codelldb then
       vim.notify(
         'codelldb executable not found yet. It may still be installing via :Mason; otherwise ensure codelldb is in PATH.',
         vim.log.levels.WARN
       )
+    else
+      dap.adapters.codelldb = {
+        type = 'server',
+        port = '${port}',
+        executable = {
+          command = codelldb_executable,
+          args = { '--port', '${port}' },
+        },
+      }
+
+      dap.configurations.c = {
+        {
+          name = 'Launch executable (codelldb)',
+          type = 'codelldb',
+          request = 'launch',
+          program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+          end,
+          cwd = '${workspaceFolder}',
+          stopOnEntry = false,
+        },
+      }
+      dap.configurations.cpp = dap.configurations.c
     end
-
-    dap.adapters.codelldb = {
-      type = 'server',
-      port = '${port}',
-      executable = {
-        command = codelldb_executable,
-        args = { '--port', '${port}' },
-      },
-    }
-
-    dap.configurations.c = {
-      {
-        name = 'Launch executable (codelldb)',
-        type = 'codelldb',
-        request = 'launch',
-        program = function()
-          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-        end,
-        cwd = '${workspaceFolder}',
-        stopOnEntry = false,
-      },
-    }
-    dap.configurations.cpp = dap.configurations.c
 
     -- Install golang specific config
     require('dap-go').setup {
