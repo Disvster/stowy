@@ -126,22 +126,24 @@ return {
 
     -- C/C++ config via codelldb
     local is_win = vim.fn.has 'win32' == 1
-    local codelldb_executable = vim.fn.exepath 'codelldb'
-    if codelldb_executable == '' then
-      codelldb_executable = vim.fn.stdpath 'data' .. '/mason/bin/codelldb'
-      if is_win then
-        codelldb_executable = codelldb_executable .. '.exe'
-      end
-    end
+    local codelldb_executable
 
-    local has_codelldb_pkg, codelldb_pkg = pcall(function()
+    local get_pkg_success, codelldb_pkg = pcall(function()
       return mason_registry.get_package 'codelldb'
     end)
-    if has_codelldb_pkg and codelldb_pkg:is_installed() then
+    if get_pkg_success and codelldb_pkg:is_installed() then
       local codelldb_install_path = codelldb_pkg:get_install_path()
       codelldb_executable = codelldb_install_path .. '/extension/adapter/codelldb'
       if is_win then
         codelldb_executable = codelldb_executable .. '.exe'
+      end
+    else
+      codelldb_executable = vim.fn.exepath 'codelldb'
+      if codelldb_executable == '' then
+        codelldb_executable = vim.fn.stdpath 'data' .. '/mason/bin/codelldb'
+        if is_win then
+          codelldb_executable = codelldb_executable .. '.exe'
+        end
       end
     end
 
