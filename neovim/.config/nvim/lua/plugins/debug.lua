@@ -66,6 +66,7 @@ return {
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
+    local mason_registry = require 'mason-registry'
 
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
@@ -124,11 +125,17 @@ return {
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- C/C++ config via codelldb
+    local codelldb_install_path = mason_registry.get_package('codelldb'):get_install_path()
+    local codelldb_executable = codelldb_install_path .. '/extension/adapter/codelldb'
+    if vim.fn.has 'win32' == 1 then
+      codelldb_executable = codelldb_executable .. '.exe'
+    end
+
     dap.adapters.codelldb = {
       type = 'server',
       port = '${port}',
       executable = {
-        command = vim.fn.stdpath 'data' .. '/mason/bin/codelldb',
+        command = codelldb_executable,
         args = { '--port', '${port}' },
       },
     }
