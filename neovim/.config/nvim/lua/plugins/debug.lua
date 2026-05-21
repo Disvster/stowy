@@ -168,7 +168,7 @@ return {
           stopOnEntry = false,
         },
       }
-      dap.configurations.cpp = dap.configurations.c
+      dap.configurations.cpp = vim.deepcopy(dap.configurations.c)
     end
 
     -- Install golang specific config
