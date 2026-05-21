@@ -146,6 +146,12 @@ return {
         end
       end
     end
+    if vim.fn.executable(codelldb_executable) == 0 then
+      vim.notify(
+        'codelldb executable not found. Install it via :Mason (codelldb) or ensure it is in your PATH.',
+        vim.log.levels.WARN
+      )
+    end
 
     dap.adapters.codelldb = {
       type = 'server',
