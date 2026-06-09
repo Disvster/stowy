@@ -32,7 +32,7 @@ return {
       desc = 'Debug: Start/Continue',
     },
     {
-      '<F1>',
+      '<F3>',
       function() require('dap').step_into() end,
       desc = 'Debug: Step Into',
     },
@@ -42,7 +42,7 @@ return {
       desc = 'Debug: Step Over',
     },
     {
-      '<F3>',
+      '<F4>',
       function() require('dap').step_out() end,
       desc = 'Debug: Step Out',
     },
@@ -109,37 +109,26 @@ return {
     }
 
     -- Change breakpoint icons
-    -- vim.api.nvim_set_hl(0, 'DapBreak', { fg = '#e51400' })
-    -- vim.api.nvim_set_hl(0, 'DapStop', { fg = '#ffcc00' })
-    -- local breakpoint_icons = vim.g.have_nerd_font
-    --     and { Breakpoint = '', BreakpointCondition = '', BreakpointRejected = '', LogPoint = '', Stopped = '' }
-    --   or { Breakpoint = '●', BreakpointCondition = '⊜', BreakpointRejected = '⊘', LogPoint = '◆', Stopped = '⭔' }
-    -- for type, icon in pairs(breakpoint_icons) do
-    --   local tp = 'Dap' .. type
-    --   local hl = (type == 'Stopped') and 'DapStop' or 'DapBreak'
-    --   vim.fn.sign_define(tp, { text = icon, texthl = hl, numhl = hl })
-    -- end
+    vim.api.nvim_set_hl(0, 'DapBreak', { fg = '#e51400' })
+    vim.api.nvim_set_hl(0, 'DapStop', { fg = '#ffcc00' })
+    local breakpoint_icons = vim.g.have_nerd_font
+        and { Breakpoint = '', BreakpointCondition = '', BreakpointRejected = '', LogPoint = '', Stopped = '' }
+      or { Breakpoint = '●', BreakpointCondition = '⊜', BreakpointRejected = '⊘', LogPoint = '◆', Stopped = '⭔' }
+    for type, icon in pairs(breakpoint_icons) do
+      local tp = 'Dap' .. type
+      local hl = (type == 'Stopped') and 'DapStop' or 'DapBreak'
+      vim.fn.sign_define(tp, { text = icon, texthl = hl, numhl = hl })
+    end
 
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- C/C++ config via codelldb
-    local is_win = vim.fn.has 'win32' == 1
+    -- local is_win = vim.fn.has 'win32' == 1
     local codelldb_executable
 
-    local ok, codelldb_pkg = pcall(function()
-      return mason_registry.get_package 'codelldb'
-    end)
-    if ok and codelldb_pkg:is_installed() then
-      local codelldb_install_path = codelldb_pkg:get_install_path()
-      codelldb_executable = codelldb_install_path .. '/extension/adapter/codelldb'
-      if is_win then
-        codelldb_executable = codelldb_executable .. '.exe'
-      end
-    else
-      codelldb_executable = vim.fn.exepath 'codelldb'
-    end
+    codelldb_executable = vim.fn.exepath 'codelldb'
     local has_codelldb = type(codelldb_executable) == 'string' and codelldb_executable ~= '' and vim.fn.executable(codelldb_executable) == 1
     if not has_codelldb then
       vim.notify(
@@ -164,8 +153,16 @@ return {
           program = function()
             return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
           end,
+          args = function()
+            local input = vim.fn.input('Arguments: ')
+            return vim.split(input, ' ', { trimempty = true })
+          end,
           cwd = '${workspaceFolder}',
           stopOnEntry = false,
+	      runInTerminal = true,
+		  setupCommands = {
+		    text = 'settings set target.process.follow-fork-mode child'
+		  }
         },
       }
       dap.configurations.cpp = vim.deepcopy(dap.configurations.c)
